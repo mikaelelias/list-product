@@ -6,7 +6,7 @@ function App() {
   const inputRef = useRef();
 
   function cliqueNoBotao() {
-    setProdutos([inputRef.current.value, ...produtos]);
+    setProdutos([{ id: v4(), nome: inputRef.current.value}, ...produtos]);
     inputRef.current.value = "";
   }
 
@@ -18,7 +18,7 @@ function App() {
       <button onClick={cliqueNoBotao}>Adicionar Produto</button>
 
       {produtos.map(produto => (
-        <div key={v4}>{produto}</div>
+        <div key={produto.id}>{produto.nome}</div>
       ))}
     </div>
   );
