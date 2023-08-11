@@ -1,20 +1,27 @@
-import { useRef } from "react"
+import React, { useRef, useState } from "react";
+import {v4} from 'uuid';
 
 function App() {
-  const inputRef = useRef ()
+  const [produtos, setProdutos] = useState([]);
+  const inputRef = useRef();
 
-  function cliqueinoBotao(){
-    console.log(inputRef.current.value)
+  function cliqueNoBotao() {
+    setProdutos([inputRef.current.value, ...produtos]);
+    inputRef.current.value = "";
   }
 
   return (
     <div>
       <h1>Lista de Compras</h1>
       <h2>teste</h2>
-      <input placeholder="Produtos" ref={inputRef}/>
-      <button onClick={cliqueinoBotao}>Adicionar Produto</button>
+      <input placeholder="Produtos" ref={inputRef} />
+      <button onClick={cliqueNoBotao}>Adicionar Produto</button>
+
+      {produtos.map(produto => (
+        <div key={v4}>{produto}</div>
+      ))}
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
