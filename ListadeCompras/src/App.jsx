@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import {v4} from 'uuid';
+import './index.css';
 
 function App() {
   const [produtos, setProdutos] = useState([]);
@@ -11,9 +12,8 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="list">
       <h1>Lista de Compras</h1>
-      <h2>teste</h2>
       <input placeholder="Produtos" ref={inputRef} />
       <button onClick={cliqueNoBotao}>Adicionar Produto</button>
 
