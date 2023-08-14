@@ -1,8 +1,8 @@
 import React, { useRef, useState } from "react";
 import { v4 } from 'uuid';
-import './index.css';
+import { AddButton } from './styles';
 
-function App() {
+function Home() {
   const [produtos, setProdutos] = useState([]);
   const inputRef = useRef();
 
@@ -19,7 +19,7 @@ function App() {
     <div className="list">
       <h1>Lista de Compras</h1>
       <input placeholder="Produtos" ref={inputRef} />
-      <button onClick={cliqueNoBotao}>Adicionar Produto</button>
+      <AddButton onClick={cliqueNoBotao}>Adicionar Produto</AddButton>
 
       {produtos.map(produto => (
         <div key={produto.id}>
@@ -31,4 +31,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;
