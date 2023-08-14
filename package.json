@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "styled-components": "^6.0.7",
     "uuid": "^9.0.0"
   }
 }
